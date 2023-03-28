@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatstream</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/start.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chatstream__wrapper">
+        <div class="chatstream">
+            <div class="chatstream__start">
+                <div class="chatstream__start-logo-container">
+                    <img class="chatstream__start-logo" src="./img/start.svg" alt="">
+                </div>
+            </div>
+            <div class="chatstream__heading">
+                <div class="chatstream__heading-nav">
+                    <img src="./img/mini-logo.svg" alt="">
+                    <div class="chatstream__heading-buttons">
+                        <div class="close">
+                            <img src="./img/x.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="chatstream__heading-info">
+                    <img src="./img/ava.svg" alt="">
+                    <div class="chatstream__heading-text">
+                        <div class="chatstream__heading-title">
+                            Your title  
+                        </div>
+                        <div class="chatstream__heading-description">
+                            Your description
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chatstream__main">
+                
+            </div>
+
+            <div class="chatstream__bottom">
+                <div class="chatstream__bottom-send">
+                    <div class="chatstream__bottom-send-input">
+                        <input class="send-input" type="text" placeholder="Напишите ваше сообщение...">
+                    </div>
+                    <div class="chatstream__bottom-send-menu">
+                        <img src="./img/Icon.svg" alt="">
+                        <div class="chatstream__bottom-button">
+                            <img src="./img/arrow-right.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="chatstream__bottom-logo">
+                        <img src="./img/logo.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="chatstream-open">
+            <img src="./img/mini-logo-white.svg" alt="">
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.chatstream-open').addEventListener('click', () => {
+            document.querySelector('.chatstream').classList.add('active');
+            document.querySelector('.chatstream-open').classList.add('hidden');
+
+            function hideLoader() {
+                document.querySelector('.chatstream__start').classList.add('hidden')
+            }
+            setTimeout(hideLoader , 1000)
+        })
+        document.querySelector('.close').addEventListener('click', () => {
+            document.querySelector('.chatstream').classList.remove('active');
+            document.querySelector('.chatstream-open').classList.remove('hidden');
+        })
+        document.querySelector('.chatstream__bottom-button').addEventListener('click', () => {
+            let msg = document.querySelector('.send-input').value;
+            console.log(msg);
+            createMsg(msg)
+            // document.querySelector('.chatstream-open').classList.remove('hidden');
+        })
+
+        function createMsg(text) {
+            let main = document.querySelector('.chatstream__main');
+            let newMsg = document.createElement("div");
+            newMsg.setAttribute('class','msg')
+            newMsg.innerText = `${text}`
+
+            main.appendChild(newMsg)
+        }
+    </script>
+</body>
+</html>
