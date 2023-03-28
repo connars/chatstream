@@ -169,7 +169,9 @@
 }
 
 .msg {
-    padding: 20px;
+    padding: 5px;
+    width: 70%;
+    font-size: 13px;
     background-color: #FFFFFF;
 }
 

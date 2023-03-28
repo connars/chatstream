@@ -87,6 +87,7 @@
             let msg = document.querySelector('.send-input').value;
             console.log(msg);
             createMsg(msg)
+            msg = '';
             // document.querySelector('.chatstream-open').classList.remove('hidden');
         })
 
@@ -95,7 +96,6 @@
             let newMsg = document.createElement("div");
             newMsg.setAttribute('class','msg')
             newMsg.innerText = `${text}`
-
             main.appendChild(newMsg)
         }
     </script>
