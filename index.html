@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatstream</title>
 
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/start.css">
     <link rel="stylesheet" href="/css/page.css">
@@ -175,10 +176,11 @@
             document.querySelector('.chatstream-open').classList.remove('hidden');
         })
         document.querySelector('.chatstream__bottom-button').addEventListener('click', () => {
-            let msg = document.querySelector('.send-input').value;
-            console.log(msg);
-            createMsg(msg)
-            msg = '';
+            let msg = document.querySelector('.send-input');
+            console.log(msg.value);
+            createMsg(msg.value)
+            
+            msg.value = "";
             // document.querySelector('.chatstream-open').classList.remove('hidden');
         })
 
