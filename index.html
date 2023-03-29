@@ -8,11 +8,13 @@
 
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/start.css">
+    <link rel="stylesheet" href="/css/page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- CHAT WINDOW -->
     <div class="chatstream__wrapper">
         <div class="chatstream">
             <div class="chatstream__start">
@@ -68,7 +70,96 @@
             <img src="./img/mini-logo-white.svg" alt="">
         </div>
     </div>
+    <!-- HEADER -->
+    <header id="header" class="header">
+        <div class="container header__container">
+            <div class="header__left">
+                <a href="/">
+                    <img src="./img/web/logo.svg" alt="">
+                </a>
+            </div>
+            <div class="header__right">
+                <ul class="header__right-list">
+                    <img class="header__close" src="./img/web/x.svg" alt="">
+                    <li class="header__right-list-item">
+                        <a class="header__right-list-item_link" href="">
+                            Про нас
+                        </a>
+                    </li>
+                    <li class="header__right-list-item">
+                        <a class="header__right-list-item_link" href="">
+                            Продукты
+                        </a>
+                        <div class="header__right-list-item_drop">
+                            <div class="drop__wrapper">
+                                <ul class="drop__list">
+                                    <li class="drop__list-item">
+                                        <a class="drop__list-item_link" href="">Продукт 1</a>
+                                    </li>
+                                    <li class="drop__list-item">
+                                        <a class="drop__list-item_link" href="">Продукт 1</a>
+                                    </li>
+                                    <li class="drop__list-item">
+                                        <a class="drop__list-item_link" href="">Продукт 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="header__right-list-item">
+                        <a class="header__right-list-item_link" href="">
+                            Преимущества
+                        </a>
+                    </li>
+                    <li class="header__right-list-item">
+                        <a class="header__right-list-item_link" href="">
+                            Цены
+                        </a>
+                    </li>
+                    <li class="header__right-list-item">
+                        <a class="header__right-list-item_link" href="">
+                            Поддержка
+                        </a>
+                    </li>
+                    <li class="header__right-list-item">
+                        <button class="main__button">
+                                Get chat
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <!-- OPEN MENU -->
+            <div class="header__open">
+                <img src="./img/web/menu-alt-3.svg" alt="">
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <!-- Главная -->
+        <section id="hero">
+            <div class="hero">
+                <div class="hero__container container">
+                    <img src="./img/web/full-logo.svg" alt="">
+                    <p class="hero__desckr">
+                        ChatStream - это имя содержит слово "чат" и слово
+                        "поток", что может подразумевать непрерывный
+                        поток обмена сообщениями в чате.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Про нас -->
+        <section id="">
 
+        </section>
+        <!-- Преимущества -->
+        <section id="">
+
+        </section>
+    </main>
+    <footer id="footer" class="footer">
+
+    </footer>
     <script>
         document.querySelector('.chatstream-open').addEventListener('click', () => {
             document.querySelector('.chatstream').classList.add('active');
@@ -98,6 +189,14 @@
             newMsg.innerText = `${text}`
             main.appendChild(newMsg)
         }
+
+        document.querySelector('.header__open').addEventListener('click', () => {
+            document.querySelector('.header__right-list').classList.add('active');
+        })
+
+        document.querySelector('.header__close').addEventListener('click', () => {
+            document.querySelector('.header__right-list').classList.remove('active');
+        })
     </script>
 </body>
 </html>
